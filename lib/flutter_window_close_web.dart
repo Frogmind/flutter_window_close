@@ -19,7 +19,7 @@ class FlutterWindowClosePluginWeb {
   }
 
   FlutterWindowClosePluginWeb() {
-    const EventStreamProvider<BeforeUnloadEvent>('beforeunload').forTarget(window).listen((Event unloadEvent) {
+    const EventStreamProvider<BeforeUnloadEvent>('beforeunload').forTarget(window).listen((BeforeUnloadEvent unloadEvent) {
       if (_returnValue != null) {
           unloadEvent.returnValue = _returnValue;
         }
